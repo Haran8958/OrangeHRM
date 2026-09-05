@@ -4,19 +4,24 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import utils.WaitUtil;
 
 public class PIMPage {
 	
 private WebDriver driver;
 
 	private static final Logger logger = LogManager.getLogger(LoginPage.class);
-	
+
+	private WaitUtil waitUtil;
+
 	public PIMPage(WebDriver driver) {
-		this.driver=driver;
+	    this.driver = driver;
+	    waitUtil = new WaitUtil(driver);
 	}
 	
 	private final By btnAdd = By.xpath("//button[text()=' Add ']");
-	private final By tabAddEmployee = By.xpath("//a[text()='Add Employee']");
+	//private final By tabAddEmployee = By.xpath("//a[text()='Add Employee']");
 	private final By txtFirstName = By.name("firstName");
 	private final By txtMiddleName = By.name("middleName");
 	private final By txtLastName = By.name("lastName");
@@ -50,8 +55,16 @@ private WebDriver driver;
 		logger.info("Lastname Entered");
 	}
 	
-	public String getEmpID() {
+	public String getEmpID1() {
 		return driver.findElement(txtEmpID).getText();
+	}
+	
+	public String getEmpID() {
+	    return driver.findElement(txtEmpID).getAttribute("value");
+	}
+	
+	public String getEmpID2() {
+	    return driver.findElement(txtEmpID).getDomProperty("value");
 	}
 	
 	public String getErrorMsg() {
@@ -63,12 +76,17 @@ private WebDriver driver;
 		logger.info("Save button clicked");
 	}
 	
-	public String getEmpName() {
-		return driver.findElement(lblEmpName).getText();
+	public String getPerDet() {
+		WebElement personalDetails = driver.findElement(lblPerDet);
+		WebElement element = waitUtil.waitForElementVisible(personalDetails);
+		return element.getText();
 	}
 	
-	public String getPerDet() {
-		return driver.findElement(lblPerDet).getText();
+	public String getEmpName() {
+		WebElement employeeName = driver.findElement(lblEmpName);
+	    waitUtil.waitForElementVisible(employeeName);
+	    waitUtil.waitForTextInElement(employeeName, "Michael Jordon");
+	    return employeeName.getText();
 	}
 	
 	

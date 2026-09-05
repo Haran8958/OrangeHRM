@@ -10,30 +10,36 @@ import pages.PIMPage;
 public class LoginPageTest extends BaseClass{
 	
 	@Test
-	public void verifyLoginPageTest() throws InterruptedException {
-		LoginPage lp = new LoginPage(driver);
+	public void verifyAddEmployeeWithValidDetails() {
 		
-		lp.login();
-		lp.clickPIM();
-		
-		PIMPage pp = new PIMPage(driver);
-		
-		pp.clickbtnAdd();
-		pp.enterFirstName("Michael");
-		pp.enterMiddleName("B");
-		pp.enterLastName("Jordon");
-		System.out.println("EMP ID: "+pp.getEmpID());
-		pp.clickbtnSave();
-		Thread.sleep(10000);
-		Assert.assertEquals(pp.getPerDet(), "Personal Details", "Person Details not displayed");
-		Assert.assertEquals(pp.getEmpName(), "Michael Jordon");
+		// Login
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.login();
+
+        // Navigate to PIM
+        loginPage.clickPIM();
+
+        // Add Employee
+        PIMPage pimPage = new PIMPage(driver);
+
+        pimPage.clickbtnAdd();
+
+        pimPage.enterFirstName("Michael");
+        pimPage.enterMiddleName("B");
+        pimPage.enterLastName("Jordon");
+
+        String employeeId = pimPage.getEmpID();
+        System.out.println("Employee ID: " + employeeId);
+
+        pimPage.clickbtnSave();
+
+        // Validations
+        Assert.assertEquals(pimPage.getPerDet(), "Personal Details", "Personal Details page is not displayed");
+
+        Assert.assertEquals(pimPage.getEmpName(), "Michael Jordon", "Employee name is incorrect");
 		
 		
 		
 	}
 	
-	
-	
-	
-
 }
