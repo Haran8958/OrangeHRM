@@ -55,16 +55,8 @@ private WebDriver driver;
 		logger.info("Lastname Entered");
 	}
 	
-	public String getEmpID1() {
-		return driver.findElement(txtEmpID).getText();
-	}
-	
 	public String getEmpID() {
-	    return driver.findElement(txtEmpID).getAttribute("value");
-	}
-	
-	public String getEmpID2() {
-	    return driver.findElement(txtEmpID).getDomProperty("value");
+		return driver.findElement(txtEmpID).getText();
 	}
 	
 	public String getErrorMsg() {
