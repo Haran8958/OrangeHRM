@@ -1,6 +1,8 @@
 package utils;
 
 import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -25,8 +27,8 @@ public class WaitUtil {
 	}
 
 	// Wait until element is present
-	public WebElement waitForElementPresent(WebElement element) {
-		return wait.until(ExpectedConditions.visibilityOf(element));
+	public WebElement waitForElementPresent(By locator) {
+		return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 	}
 
 	// Wait until element disappears

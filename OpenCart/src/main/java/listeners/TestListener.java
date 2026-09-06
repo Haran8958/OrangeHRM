@@ -33,6 +33,7 @@ public class TestListener implements ITestListener {
         //System.out.println("Test Skipped: " + result.getName());
         logger.info("TEST SKIPPED: {}",result.getName());
     }
+    
     @Override
     public void onStart(ITestContext context) {
         System.out.println("Test Suite Started");

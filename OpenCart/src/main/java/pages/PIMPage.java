@@ -5,13 +5,14 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import utils.ConfigReader;
 import utils.WaitUtil;
 
 public class PIMPage {
 	
 private WebDriver driver;
 
-	private static final Logger logger = LogManager.getLogger(LoginPage.class);
+	private static final Logger logger = LogManager.getLogger(PIMPage.class);
 
 	private WaitUtil waitUtil;
 
@@ -33,7 +34,8 @@ private WebDriver driver;
 	
 	public void clickbtnAdd() {
 		logger.info("Clicking Add button");
-		driver.findElement(btnAdd).click();
+		//driver.findElement(btnAdd).click();
+		waitUtil.waitForElementClickable(driver.findElement(btnAdd)).click();
 		logger.info("Add button clicked");
 	}
 	
@@ -77,7 +79,7 @@ private WebDriver driver;
 	public String getEmpName() {
 		WebElement employeeName = driver.findElement(lblEmpName);
 	    waitUtil.waitForElementVisible(employeeName);
-	    waitUtil.waitForTextInElement(employeeName, "Michael Jordon");
+	    waitUtil.waitForTextInElement(employeeName, ConfigReader.getProperty("empFirstName")+" "+ConfigReader.getProperty("empLastName"));
 	    return employeeName.getText();
 	}
 	

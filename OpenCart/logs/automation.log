@@ -589,3 +589,59 @@
 2026-09-06 11:00:02 INFO  LoginPage - Save button clicked
 2026-09-06 11:00:08 INFO  BaseClass - Starting browser teardown
 2026-09-06 11:00:08 INFO  BaseClass - Browser closed successfully
+2026-09-06 11:28:23 INFO  BaseClass - ===== Test Setup Started =====
+2026-09-06 11:28:23 INFO  BaseClass - Creating WebDriver
+2026-09-06 11:28:23 INFO  DriverFactory - Requested browser: chrome
+2026-09-06 11:28:23 INFO  DriverFactory - Launching Chrome
+2026-09-06 11:28:25 INFO  BaseClass - WebDriver created successfully
+2026-09-06 11:28:25 INFO  BaseClass - Browser maximized
+2026-09-06 11:28:25 INFO  BaseClass - Cookies deleted
+2026-09-06 11:28:25 INFO  BaseClass - Navigating to URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-09-06 11:28:28 INFO  BaseClass - URL loaded successfully
+2026-09-06 11:28:28 INFO  BaseClass - ===== Test Setup Completed =====
+2026-09-06 11:28:28 INFO  LoginPage - Entering Username
+2026-09-06 11:28:28 INFO  LoginPage - Username Entered
+2026-09-06 11:28:28 INFO  LoginPage - Entering Password
+2026-09-06 11:28:28 INFO  LoginPage - Username Password
+2026-09-06 11:28:28 INFO  LoginPage - Clicking Login button
+2026-09-06 11:28:28 INFO  LoginPage - Login button clicked
+2026-09-06 11:28:28 INFO  LoginPage - Clicking PIM Link
+2026-09-06 11:28:31 INFO  LoginPage - Clicked PIM Link
+2026-09-06 11:28:31 INFO  LoginPage - Clicking Add button
+2026-09-06 11:28:32 INFO  LoginPage - Add button clicked
+2026-09-06 11:28:32 INFO  LoginPage - Entering Firstname
+2026-09-06 11:28:32 INFO  LoginPage - Firstname Entered
+2026-09-06 11:28:32 INFO  LoginPage - Entering Middlename
+2026-09-06 11:28:32 INFO  LoginPage - Middlename Entered
+2026-09-06 11:28:32 INFO  LoginPage - Entering Lastname
+2026-09-06 11:28:32 INFO  LoginPage - Lastname Entered
+2026-09-06 11:28:32 INFO  LoginPage - Clicking Save button
+2026-09-06 11:28:33 INFO  LoginPage - Save button clicked
+2026-09-06 11:28:38 INFO  BaseClass - Starting browser teardown
+2026-09-06 11:28:40 INFO  BaseClass - Browser closed successfully
+2026-09-06 14:20:12 INFO  BaseClass - ===== Test Setup Started =====
+2026-09-06 14:20:12 INFO  BaseClass - Creating WebDriver
+2026-09-06 14:20:12 INFO  DriverFactory - Requested browser: chrome
+2026-09-06 14:20:12 INFO  DriverFactory - Launching Chrome
+2026-09-06 14:20:14 INFO  BaseClass - WebDriver created successfully
+2026-09-06 14:20:14 INFO  BaseClass - Browser maximized
+2026-09-06 14:20:14 INFO  BaseClass - Cookies deleted
+2026-09-06 14:20:14 INFO  BaseClass - Navigating to URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-09-06 14:20:16 INFO  BaseClass - URL loaded successfully
+2026-09-06 14:20:16 INFO  BaseClass - ===== Test Setup Completed =====
+2026-09-06 14:20:16 INFO  LoginPageTest - Starting valid login test
+2026-09-06 14:20:16 INFO  BaseClass - Starting browser teardown
+2026-09-06 14:20:17 INFO  BaseClass - Browser closed successfully
+2026-09-06 14:20:17 INFO  BaseClass - ===== Test Setup Started =====
+2026-09-06 14:20:17 INFO  BaseClass - Creating WebDriver
+2026-09-06 14:20:17 INFO  DriverFactory - Requested browser: chrome
+2026-09-06 14:20:17 INFO  DriverFactory - Launching Chrome
+2026-09-06 14:20:17 INFO  BaseClass - WebDriver created successfully
+2026-09-06 14:20:18 INFO  BaseClass - Browser maximized
+2026-09-06 14:20:18 INFO  BaseClass - Cookies deleted
+2026-09-06 14:20:18 INFO  BaseClass - Navigating to URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-09-06 14:20:20 INFO  BaseClass - URL loaded successfully
+2026-09-06 14:20:20 INFO  BaseClass - ===== Test Setup Completed =====
+2026-09-06 14:20:20 INFO  LoginPageTest - Starting invalid login test
+2026-09-06 14:20:20 INFO  BaseClass - Starting browser teardown
+2026-09-06 14:20:20 INFO  BaseClass - Browser closed successfully

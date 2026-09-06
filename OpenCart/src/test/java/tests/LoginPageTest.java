@@ -1,46 +1,50 @@
 package tests;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import baseClass.BaseClass;
+import pages.DashBoardPage;
 import pages.LoginPage;
 import pages.PIMPage;
 import utils.ConfigReader;
 
 public class LoginPageTest extends BaseClass{
-	
-	@Test
-	public void verifyAddEmployeeWithValidDetails() {
-		
-		// Login
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.login();
 
-        // Navigate to PIM
-        loginPage.clickPIM();
+	private static final Logger logger = LogManager.getLogger(LoginPageTest.class);
+	LoginPage loginPage = new LoginPage(driver);
 
-        // Add Employee
-        PIMPage pimPage = new PIMPage(driver);
+	@Test(priority = 1)
+	public void verifyValidLogin() {
+		logger.info("Starting valid login test");
 
-        pimPage.clickbtnAdd();
+		DashBoardPage dashboardPage = loginPage.validLogin(ConfigReader.getProperty("username"),ConfigReader.getProperty("password"));
 
-        pimPage.enterFirstName(ConfigReader.getProperty("empFirstName"));
-        pimPage.enterMiddleName(ConfigReader.getProperty("empMiddleName"));
-        pimPage.enterLastName(ConfigReader.getProperty("empLastName"));
+		Assert.assertTrue(dashboardPage.isDashboardDisplayed(),"Dashboard page is not displayed after successful login");
 
-        String employeeId = pimPage.getEmpID();
-        System.out.println("Employee ID: " + employeeId);
-
-        pimPage.clickbtnSave();
-
-        // Validations
-        Assert.assertEquals(pimPage.getPerDet(), "Personal Details", "Personal Details page is not displayed");
-
-        Assert.assertEquals(pimPage.getEmpName(), ConfigReader.getProperty("empFirstName")+" "+ConfigReader.getProperty("empLastName"), "Employee name is incorrect");
-		
-		
-		
+		logger.info("Valid login test completed successfully");
 	}
-	
+
+
+	@Test(priority = 2)
+	public void verifyInvalidLogin() {
+		logger.info("Starting invalid login test");
+		
+		String actualErrorMessage = loginPage.invalidLogin("InvalidUser","InvalidPassword");
+		String expectedErrorMessage = "Invalid credentials";
+
+		Assert.assertEquals(actualErrorMessage, expectedErrorMessage,
+				"Incorrect error message displayed for invalid login");
+
+		logger.info("Invalid login test completed successfully");
+	}
+
+
+
+
+
+
+
+
 }
