@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import baseClass.BaseClass;
 import pages.LoginPage;
 import pages.PIMPage;
+import utils.ConfigReader;
 
 public class LoginPageTest extends BaseClass{
 	
@@ -24,9 +25,9 @@ public class LoginPageTest extends BaseClass{
 
         pimPage.clickbtnAdd();
 
-        pimPage.enterFirstName("Michael");
-        pimPage.enterMiddleName("B");
-        pimPage.enterLastName("Jordon");
+        pimPage.enterFirstName(ConfigReader.getProperty("empFirstName"));
+        pimPage.enterMiddleName(ConfigReader.getProperty("empMiddleName"));
+        pimPage.enterLastName(ConfigReader.getProperty("empLastName"));
 
         String employeeId = pimPage.getEmpID();
         System.out.println("Employee ID: " + employeeId);
@@ -36,7 +37,7 @@ public class LoginPageTest extends BaseClass{
         // Validations
         Assert.assertEquals(pimPage.getPerDet(), "Personal Details", "Personal Details page is not displayed");
 
-        Assert.assertEquals(pimPage.getEmpName(), "Michael Jordon", "Employee name is incorrect");
+        Assert.assertEquals(pimPage.getEmpName(), ConfigReader.getProperty("empFirstName")+" "+ConfigReader.getProperty("empLastName"), "Employee name is incorrect");
 		
 		
 		

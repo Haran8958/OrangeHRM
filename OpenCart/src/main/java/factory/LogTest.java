@@ -6,8 +6,7 @@ import org.testng.annotations.Test;
 
 public class LogTest {
 
-	private static final Logger logger =
-			LogManager.getLogger(LogTest.class);
+	private static final Logger logger = LogManager.getLogger(LogTest.class);
 
 	@Test
 	public void testLogging() {

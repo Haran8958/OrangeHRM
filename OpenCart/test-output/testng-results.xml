@@ -2,19 +2,23 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-09-05T18:06:47 IST" name="Default suite" finished-at="2026-09-05T18:07:02 IST" duration-ms="14853">
+  <suite started-at="2026-09-06T10:59:50 IST" name="Default suite" finished-at="2026-09-06T11:00:08 IST" duration-ms="17553">
     <groups>
     </groups>
-    <test started-at="2026-09-05T18:06:47 IST" name="Default test" finished-at="2026-09-05T18:07:02 IST" duration-ms="14853">
+    <test started-at="2026-09-06T10:59:50 IST" name="Default test" finished-at="2026-09-06T11:00:08 IST" duration-ms="17553">
       <class name="tests.LoginPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginPageTest@62727399]" started-at="2026-09-05T18:06:47 IST" name="setUp" finished-at="2026-09-05T18:06:49 IST" duration-ms="1968" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginPageTest@2654635]" started-at="2026-09-06T10:59:50 IST" name="setUp" finished-at="2026-09-06T10:59:57 IST" duration-ms="6076" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyLoginPageTest()[pri:0, instance:tests.LoginPageTest@62727399]" started-at="2026-09-05T18:06:49 IST" name="verifyLoginPageTest" finished-at="2026-09-05T18:07:02 IST" duration-ms="12854" status="PASS">
+        <test-method signature="verifyAddEmployeeWithValidDetails()[pri:0, instance:tests.LoginPageTest@2654635]" started-at="2026-09-06T10:59:57 IST" name="verifyAddEmployeeWithValidDetails" finished-at="2026-09-06T11:00:08 IST" duration-ms="11214" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyLoginPageTest -->
+        </test-method> <!-- verifyAddEmployeeWithValidDetails -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginPageTest@2654635]" started-at="2026-09-06T11:00:08 IST" name="tearDown" finished-at="2026-09-06T11:00:08 IST" duration-ms="233" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
       </class> <!-- tests.LoginPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

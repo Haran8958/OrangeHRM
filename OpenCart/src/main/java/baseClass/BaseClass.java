@@ -13,6 +13,7 @@ public class BaseClass {
 
 	protected WebDriver driver;
 	private static final Logger logger = LogManager.getLogger(BaseClass.class);
+	
 	@BeforeMethod
 	public void setUp() {
 		logger.info("===== Test Setup Started =====");
@@ -32,7 +33,6 @@ public class BaseClass {
 		logger.info("URL loaded successfully");
 
 		logger.info("===== Test Setup Completed =====");
-
 
 	}
 
