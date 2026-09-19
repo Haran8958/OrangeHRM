@@ -19,9 +19,11 @@ public class LoginPageTest extends BaseClass{
 		LoginPage loginPage = new LoginPage(driver);
 		logger.info("Starting valid login test");
 
-		DashBoardPage dashboardPage = loginPage.validLogin(ConfigReader.getProperty("username"),ConfigReader.getProperty("password"));
+		DashBoardPage dashboardPage = loginPage.validLogin(ConfigReader.getProperty("username"),
+				ConfigReader.getProperty("password"));
 
-		Assert.assertTrue(dashboardPage.isDashboardDisplayed(),"Dashboard page is not displayed after successful login");
+		Assert.assertTrue(dashboardPage.isDashboardDisplayed(),
+				"Dashboard page is not displayed after successful login");
 
 		logger.info("Valid login test completed successfully");
 	}
@@ -42,7 +44,7 @@ public class LoginPageTest extends BaseClass{
 		//Assert.assertEquals(true, false);
 	}
 	
-	@Test(priority = 3)
+	@Test(priority = 3, enabled = false)
 	public void skippingTest() {
 		LoginPage loginPage = new LoginPage(driver);
 		System.out.println("Skipping this test intentionally");
